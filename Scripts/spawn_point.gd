@@ -5,6 +5,7 @@ var ammo_ready
 
 # SCRIPT CURRENTLY DOES NOTHING, it would've been integral to a cut shooting 
 # mechanic as well as a third enemy type
+# It would've also been integral to a minimap that I had to cut for now
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

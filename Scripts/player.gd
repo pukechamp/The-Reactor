@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		EventHandler.minigame_input.emit(current_room)	
 	EventHandler.update_enemy_rotation.emit(rotation.y)
 
-func _turn(_angle: float):
+func _turn(_angle: float): # Uses tweens for a pseudo animation for the individual turns, the player can't do anything mid-turn by design
 	if $actiontimer.is_stopped():
 		$actiontimer.start()
 		if _angle > 0:
@@ -38,7 +38,7 @@ func _turn(_angle: float):
 		rt.tween_property(self, "quaternion", t_dir, .4).set_trans(Tween.TRANS_LINEAR)
 		await rt.finished
 
-func _changedir(_t: int): # 0 for left, 1 for right
+func _changedir(_t: int): # 0 for left, 1 for right, updates the direction the player is currently facing
 	match current_dir:
 		"north":
 			if _t == 0:
@@ -61,9 +61,9 @@ func _changedir(_t: int): # 0 for left, 1 for right
 			else: 
 				current_dir = "north"
 	if current_room < 0:
-		EventHandler.check_minigame_ui.emit(current_room, current_dir)
+		EventHandler.check_minigame_ui.emit(current_room, current_dir) # Checks whether or not the player is facing an active terminal screen
 
-func move_check(can: bool, n_room: int):
+func move_check(can: bool, n_room: int): # Confirms whether or not a player is allowed to move to a specific room
 	if $actiontimer.is_stopped():
 		if can == true:
 			current_room = n_room
@@ -72,7 +72,7 @@ func move_check(can: bool, n_room: int):
 			$ErrorSound.play()
 			$actiontimer.start(.3)
 
-func move(n_x: float, n_z: float):
+func move(n_x: float, n_z: float): # Uses tweens to animate movement
 	if $actiontimer.is_stopped():
 		$actiontimer.start()
 		$Footstep.play()
@@ -84,5 +84,5 @@ func move(n_x: float, n_z: float):
 			await movement.finished
 			EventHandler.check_minigame_ui.emit(current_room, current_dir)
 
-func add_ammo():
-	ammo_counter += 1
+func add_ammo(): # For the unused shooting mechanic
+	ammo_counter += 1 # The player would've been able to ocasionally pick bullets across the map to either shoot enemies and remove them from the level for around 15 seconds or shoot a closed-door open

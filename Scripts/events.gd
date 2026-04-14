@@ -1,5 +1,7 @@
 extends Node
 
+# Constantly runs in the background and allows signals to be sent and received across different scenes
+
 # Updates the arrays on their adjecent rooms
 signal room_close_door(id: int, t_id:int, dir: String) 
 signal room_open_door(id: int, t_id:int, dir: String)
@@ -34,10 +36,10 @@ signal turn_off_screen(id)
 
 signal got_ammo() # Signal to add to the player's ammo counter
 
-signal stationary_enemy_spawn()
-signal destroyed(enemy) # For the main to handle enemy deaths/respawns
-signal update_enemy_rotation(angle)
+signal stationary_enemy_spawn() # For a cut enemy type
+signal destroyed(enemy) # For the main to handle enemy deaths/respawns, another cut feature
+signal update_enemy_rotation(angle) # For the enemy to always face the player
 
-signal increase_difficulty() 
+signal increase_difficulty() # Self-explanatory, for each individual object to handle as required
 
 signal game_over() # Self-explanatory

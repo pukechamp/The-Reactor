@@ -1,20 +1,19 @@
 extends Control
 
+# Simple game over screen, has the option for a player to restart 
+
 # var game_scene = preload("res://Scenes/main.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
-
-func _on_restart_pressed() -> void:
+func _on_restart_pressed() -> void: # Restarts the game
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
-
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	get_tree().quit() # Closes the game

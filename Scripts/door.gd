@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var door_id: int
+@export var door_id: int                     # Matching arrays for each connected rooms and their respective directions
 @export var connected_rooms: Array[int] = [] # BOTH ARRAYS MUST BE EQUAL IN SIZE
 @export var connected_dir: Array[String] = [] # AND EACH ELEMENT MATCHING
 @onready var nav_region = get_tree().get_first_node_in_group("level")
@@ -15,6 +15,7 @@ func _ready():
 func _process(_delta: float) -> void:
 	pass
 
+# Both opening and closing the doors sends signals to the rooms to have them remove possible directions and rooms from their arrays to prevent movement through closed paths
 func open_door(id):
 	if id == door_id && !is_open:
 		is_open = true
@@ -31,7 +32,7 @@ func open_door(id):
 		
 		await open.finished
 		if nav_region.is_baking():
-			await get_tree().create_timer(0.1).timeout
+			await get_tree().create_timer(0.1).timeout # To avoid further errors whenm rebaking the mesh TODO: fix it so it works entirely
 		nav_region.bake_navigation_mesh()
 
 func close_door(id):
@@ -55,4 +56,4 @@ func close_door(id):
 		nav_region.bake_navigation_mesh()
 
 func _on_reopen_timer_timeout() -> void:
-	open_door(door_id)
+	open_door(door_id) # Every door automatically reopens after 15 seconds

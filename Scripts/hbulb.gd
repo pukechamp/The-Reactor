@@ -1,5 +1,8 @@
 extends Node
 
+# Both lightbulb scenes are near identical, with minor differences in size and brightness
+# This is the hallway variant, it's smaller and not as bright
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
