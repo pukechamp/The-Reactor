@@ -102,6 +102,7 @@ func _on_navigation_agent_3d_navigation_finished() -> void:
 
 func _on_player_detection_area_entered(area: Area3D) -> void:
 	if area.is_in_group("player"):
+		$DeathSound.play()
 		EventHandler.game_over.emit()
 
 func speed_up():

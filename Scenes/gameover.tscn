@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjjqmh56j47wq"]
+[gd_scene load_steps=6 format=3 uid="uid://cjjqmh56j47wq"]
 
 [ext_resource type="Script" uid="uid://b6aqcu7wgtf3e" path="res://Scripts/gameover.gd" id="1_qpupn"]
 [ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="2_2oltb"]
 [ext_resource type="Texture2D" uid="uid://cdgwwj01v1l8y" path="res://trenchbroom/textures/gameover.png" id="3_2oltb"]
+[ext_resource type="AudioStream" uid="uid://dfvant63j5hm" path="res://Scripts/submority-morphed-metal-discharged-cinematic-trailer-sound-effects-124763.mp3" id="4_6kwjr"]
+[ext_resource type="AudioStream" uid="uid://dpdmrk8qu7ycf" path="res://Sfx/dragon-studio-creepy-industrial-sounds-ambience-482892.mp3" id="5_bb3cs"]
 
 [node name="Gameover" type="Control"]
 layout_mode = 3
@@ -63,6 +65,14 @@ text = "Quit"
 z_index = -1
 position = Vector2(960, 540)
 texture = ExtResource("3_2oltb")
+
+[node name="GameOverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6kwjr")
+autoplay = true
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bb3cs")
+autoplay = true
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
