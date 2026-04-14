@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://nvcracacqqqh"]
+[gd_scene load_steps=5 format=3 uid="uid://nvcracacqqqh"]
 
 [ext_resource type="Script" uid="uid://ppwqjfo6mhk" path="res://Scripts/win_screen.gd" id="1_a00f1"]
 [ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="1_l5sol"]
 [ext_resource type="AudioStream" uid="uid://d07iqupud46ss" path="res://Sfx/fronbondi_skegs-amb-bleak-but-hopeful-futuristic-ambient-background-track-258932.mp3" id="3_awi1s"]
+[ext_resource type="Texture2D" uid="uid://d0ugbo7ncafco" path="res://trenchbroom/textures/ThankYou.png" id="4_bwc64"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -67,5 +68,10 @@ text = "Back to Title Screen"
 stream = ExtResource("3_awi1s")
 autoplay = true
 parameters/looping = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1421, 683)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_bwc64")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
