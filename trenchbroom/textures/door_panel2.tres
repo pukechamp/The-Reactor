@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7tdkhgdxilvs"]
+
+[ext_resource type="Texture2D" uid="uid://bykkdkpon5k8h" path="res://trenchbroom/textures/door_panel2.jpg" id="1_vkx4l"]
+
+[resource]
+albedo_texture = ExtResource("1_vkx4l")
+metallic_specular = 0.0
+texture_filter = 2

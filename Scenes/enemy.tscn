@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjsypl0aspobu"]
+
+[ext_resource type="Script" uid="uid://bdbyf6xtchx8v" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://beaqggt7ylrwg" path="res://trenchbroom/textures/gremlin.png" id="2_afpow"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1f0kj"]
+size = Vector3(1.361515, 6.1610527, 1.3426971)
+
+[sub_resource type="PointMesh" id="PointMesh_afpow"]
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+floor_constant_speed = true
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 2.4, 0)
+shaded = true
+texture = ExtResource("2_afpow")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0802443, 3.433278, 0.018959045)
+shape = SubResource("BoxShape3D_1f0kj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0990458, 0)
+mesh = SubResource("PointMesh_afpow")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+avoidance_enabled = true
+
+[node name="Steps" type="AudioStreamPlayer3D" parent="."]
+autoplay = true
+max_distance = 40.0
+
+[node name="PlayerDetection" type="Area3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+collision_layer = 0
+
+[node name="Coll" type="CollisionShape3D" parent="PlayerDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0802443, 3.433278, 0.018959045)
+shape = SubResource("BoxShape3D_1f0kj")
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="area_entered" from="PlayerDetection" to="." method="_on_player_detection_area_entered"]

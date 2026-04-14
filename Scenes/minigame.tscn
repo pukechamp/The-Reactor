@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://fwbx0a2ecm3m"]
+
+[ext_resource type="Script" uid="uid://d13qp7qukl6ci" path="res://Scripts/minigame.gd" id="1_ij8rg"]
+[ext_resource type="Texture2D" uid="uid://2t0cj3nyg10h" path="res://trenchbroom/textures/bar.png" id="2_5bepb"]
+[ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="3_xt64r"]
+[ext_resource type="AudioStream" uid="uid://c6gblltrfeopp" path="res://Sfx/astralsynthesizer-11l-victory-1749704550711-358777.mp3" id="4_xt64r"]
+[ext_resource type="AudioStream" uid="uid://djbgy7kwac20y" path="res://Sfx/dragon-studio-single-key-press-393908.mp3" id="5_iqey4"]
+
+[sub_resource type="FontVariation" id="FontVariation_iqey4"]
+base_font = ExtResource("3_xt64r")
+
+[node name="Minigame" type="Control"]
+layout_mode = 3
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -0.15209961
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ij8rg")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 851.0
+offset_top = 128.0
+offset_right = -851.76794
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 3
+show_percentage = false
+
+[node name="Bar" type="Sprite2D" parent="."]
+position = Vector2(960, 480)
+texture = ExtResource("2_5bepb")
+
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 377.0
+offset_top = 916.0
+offset_right = -370.76794
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_iqey4")
+theme_override_font_sizes/font_size = 100
+text = "PRESS SPACE TO FIX TERMINAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryJingle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xt64r")
+
+[node name="Press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iqey4")
+volume_db = -6.98
+
+[connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

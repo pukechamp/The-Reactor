@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1oqicp3a5j6w"]
+
+[ext_resource type="Script" uid="uid://bvi5q6reu1okq" path="res://Scripts/hbulb.gd" id="1_sr6av"]
+[ext_resource type="Texture2D" uid="uid://dg7by2kptgaft" path="res://trenchbroom/textures/bulb.png" id="2_iqp22"]
+[ext_resource type="AudioStream" uid="uid://46gh73gw02xx" path="res://Sfx/freesound_community-flickeringlight-90411.mp3" id="3_cpr54"]
+
+[node name="Bulb" type="Node3D"]
+script = ExtResource("1_sr6av")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.1, 1.509958e-08, 0, -1.509958e-08, -0.1, 0, 0, 0, 0.1, 0, 0, 0)
+texture = ExtResource("2_iqp22")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.6454739, 0)
+light_color = Color(0.8627451, 0.4862745, 0, 1)
+light_energy = 0.2
+light_indirect_energy = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 200.0
+distance_fade_shadow = 100.0
+spot_range = 21.37
+spot_attenuation = -0.35
+spot_angle = 31.385267
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.6784314, 0.12156863, 1)
+light_energy = 0.12
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 14.947
+omni_attenuation = 0.05
+
+[node name="flickersfx" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.4154677, 0)
+stream = ExtResource("3_cpr54")
+volume_db = 2.0
+max_distance = 16.0
+
+[node name="lighttimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="soundtimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true

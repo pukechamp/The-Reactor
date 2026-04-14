@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dedsmxjkihmmu"]
+
+[ext_resource type="Script" uid="uid://iu07n1wu5sm8" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://cvom2vev50we6" path="res://Sfx/freesound_community-error-sound-39539.mp3" id="2_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://bdejkpo1x1qcg" path="res://Sfx/data_pion-st2-footstep-sfx-323055.mp3" id="3_vgqql"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0iea"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_v0iea")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+fov = 120.0
+
+[node name="actiontimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="EnemyDetector" type="Area3D" parent="." groups=["player"]]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDetector"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_v0iea")
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6t5aa")
+volume_db = -12.0
+
+[node name="Footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vgqql")
+volume_db = -5.0
+
+[connection signal="body_shape_entered" from="EnemyDetector" to="." method="_on_character_body_3d_body_shape_entered"]

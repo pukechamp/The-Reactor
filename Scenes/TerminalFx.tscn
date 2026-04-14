@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxx8gdyl56dnu"]
+
+[ext_resource type="Script" uid="uid://db4xeeise4w6v" path="res://Scripts/terminal_flicker.gd" id="1_8boce"]
+[ext_resource type="AudioStream" uid="uid://dhpg5vfcjdc2r" path="res://Sfx/freesound_community-computer-hum-78343.mp3" id="2_uu3ki"]
+[ext_resource type="Texture2D" uid="uid://dlbpvjo4j8cuq" path="res://trenchbroom/textures/warning.png" id="3_d1adv"]
+[ext_resource type="AudioStream" uid="uid://bmdn8g562et3i" path="res://Sfx/jeremayjimenez-greece-eas-alarm-451404.mp3" id="4_232ov"]
+
+[node name="TerminalFx" type="Node3D"]
+script = ExtResource("1_8boce")
+
+[node name="flickertimer" type="Timer" parent="."]
+wait_time = 0.12
+one_shot = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0, 1, 0, 1)
+omni_range = 80.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_uu3ki")
+volume_db = 53.635
+max_distance = 30.0
+
+[node name="Screen" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4255414, -2.8737774)
+texture = ExtResource("3_d1adv")
+
+[node name="Alarm" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_232ov")
+max_distance = 100.0
+parameters/looping = true
