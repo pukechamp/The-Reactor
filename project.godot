@@ -85,5 +85,6 @@ shoot={
 
 [rendering]
 
+renderer/rendering_method.mobile="forward_plus"
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 shading/tighter_shadow_caster_culling=false

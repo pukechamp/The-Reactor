@@ -70,6 +70,7 @@ func get_spawn_point() -> Vector3: # Replace with something more sophisticated i
 
 func time_to_string() -> String: # Creates a string to display the time left
 	var s_count = int($GameTimer.time_left)
+	@warning_ignore("integer_division")
 	var minutes = s_count / 60
 	s_count -= (minutes * 60)
 	if s_count >= 10:
