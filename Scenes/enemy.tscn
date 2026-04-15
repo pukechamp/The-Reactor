@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjsypl0aspobu"]
+[gd_scene load_steps=7 format=3 uid="uid://bjsypl0aspobu"]
 
 [ext_resource type="Script" uid="uid://bdbyf6xtchx8v" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://beaqggt7ylrwg" path="res://trenchbroom/textures/gremlin.png" id="2_afpow"]
 [ext_resource type="AudioStream" uid="uid://ch5bp16jrjt7l" path="res://Sfx/universfield-bone-crack-3-121580.mp3" id="3_afpow"]
+[ext_resource type="Texture2D" uid="uid://c5hw4p3gx2ks1" path="res://trenchbroom/textures/Black.png" id="4_287tu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1f0kj"]
 size = Vector3(1.361515, 6.1610527, 1.3426971)
@@ -45,6 +46,18 @@ shape = SubResource("BoxShape3D_1f0kj")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_afpow")
+volume_db = 24.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.99700004
+offset_bottom = 0.23999023
+
+[node name="Black" type="Sprite2D" parent="Control"]
+position = Vector2(982, 537.5)
+scale = Vector2(3.8828125, 2.1699219)
+texture = ExtResource("4_287tu")
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="area_entered" from="PlayerDetection" to="." method="_on_player_detection_area_entered"]

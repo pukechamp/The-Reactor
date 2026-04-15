@@ -33,6 +33,7 @@ func _ready() -> void:
 	EventHandler.receive_new_location.connect(get_player_location)
 	EventHandler.update_enemy_rotation.connect(update_rotation)
 	EventHandler.increase_difficulty.connect(speed_up)
+	$Control.hide()
 	if enemy_type == 0:
 		$Sprite3D.texture = load("res://trenchbroom/textures/Beekeeper.png")
 		$Sprite3D.position.y = 4.4
@@ -103,6 +104,8 @@ func _on_navigation_agent_3d_navigation_finished() -> void:
 func _on_player_detection_area_entered(area: Area3D) -> void:
 	if area.is_in_group("player"):
 		$DeathSound.play()
+		$Control.show()
+		await get_tree().create_timer(.4).timeout
 		EventHandler.game_over.emit()
 
 func speed_up():
