@@ -2,14 +2,12 @@ extends Node3D
 
 @export var current_room: int
 @export var current_dir: String
-var ammo_counter # Part of unimplemented shooting mechanic
+var turning = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	ammo_counter = 0
 	EventHandler.can_move.connect(move_check)
 	EventHandler.receive_new_location.connect(move)
-	EventHandler.got_ammo.connect(add_ammo)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -26,8 +24,9 @@ func _process(_delta: float) -> void:
 	EventHandler.update_enemy_rotation.emit(rotation.y)
 
 func _turn(_angle: float): # Uses tweens for a pseudo animation for the individual turns, the player can't do anything mid-turn by design
-	if $actiontimer.is_stopped():
+	if $actiontimer.is_stopped() && !turning:
 		$actiontimer.start()
+		turning = true
 		if _angle > 0:
 			_changedir(0)
 		else:
@@ -37,6 +36,7 @@ func _turn(_angle: float): # Uses tweens for a pseudo animation for the individu
 		var rt = create_tween()
 		rt.tween_property(self, "quaternion", t_dir, .4).set_trans(Tween.TRANS_LINEAR)
 		await rt.finished
+		turning = false # Double check to guarantee the POV won't be messed up while turning too fast
 
 func _changedir(_t: int): # 0 for left, 1 for right, updates the direction the player is currently facing
 	match current_dir:
@@ -83,6 +83,3 @@ func move(n_x: float, n_z: float): # Uses tweens to animate movement
 		if current_room < 0:
 			await movement.finished
 			EventHandler.check_minigame_ui.emit(current_room, current_dir)
-
-func add_ammo(): # For the unused shooting mechanic
-	ammo_counter += 1 # The player would've been able to ocasionally pick bullets across the map to either shoot enemies and remove them from the level for around 15 seconds or shoot a closed-door open

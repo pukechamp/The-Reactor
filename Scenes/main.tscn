@@ -1239,7 +1239,7 @@ script = ExtResource("1_fevyy")
 transform = Transform3D(0.664409, 0, 0.7473692, 0, 1, 0, -0.7473692, 0, 0.664409, 0.2769903, 17.26514, 9.159466)
 
 [node name="CenterBulb" parent="." groups=["Bulbs"] instance=ExtResource("11_pf1pm")]
-transform = Transform3D(0.3986454, 0, 0.44842157, 0, 0.6, 0, -0.44842157, 0, 0.3986454, 40.21025, 15.784048, 49.78096)
+transform = Transform3D(0.3986454, 0, 0.44842157, 0, 0.6, 0, -0.44842157, 0, 0.3986454, 40.21025, 15.784048, 49.749622)
 
 [node name="BulbRoom2" parent="." groups=["Bulbs"] instance=ExtResource("11_pf1pm")]
 transform = Transform3D(-0.68181974, 0, 0.7315203, 0, 1, 0, -0.7315203, 0, -0.68181974, 81.27806, 17.26514, 9.159466)
@@ -1266,7 +1266,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40.7
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40.745136, 15.978588, 8.8161125)
 
 [node name="TerminalFx1" parent="." instance=ExtResource("15_jkhe7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.342354, 6.4252887, -14.524919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.119164, 6.4252887, -14.524919)
 fx_id = -4
 
 [node name="TerminalFx2" parent="." instance=ExtResource("15_jkhe7")]
@@ -1358,7 +1358,7 @@ connected_rooms = Array[int]([7, 8])
 connected_dir = Array[String](["north", "south"])
 
 [node name="Room0" parent="." instance=ExtResource("6_h1bgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.83288, -9.536743e-07, 49.75793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.21, 0, 49.75)
 connected_dir = Array[String](["north", "east", "south", "west"])
 connected_rooms = Array[int]([2, 4, 6, 8])
 
@@ -1369,7 +1369,7 @@ connected_dir = Array[String](["east", "south"])
 connected_rooms = Array[int]([2, 8])
 
 [node name="Room2" parent="." instance=ExtResource("6_h1bgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.31553, -9.536743e-07, 49.75793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.31553, -9.536743e-07, 49.697945)
 room_id = 2
 connected_dir = Array[String](["north", "south", "west", "east"])
 connected_rooms = Array[int]([-1, 0, 1, 3])
@@ -1381,7 +1381,7 @@ connected_dir = Array[String](["west", "south"])
 connected_rooms = Array[int]([2, 4])
 
 [node name="Room4" parent="." instance=ExtResource("6_h1bgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.598324, -9.536743e-07, 90.14406)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7121, 0, 90.144)
 room_id = 4
 connected_dir = Array[String](["east", "west", "north", "south"])
 connected_rooms = Array[int]([-2, 0, 3, 5])
@@ -1411,30 +1411,26 @@ connected_dir = Array[String](["west", "east", "north", "south"])
 connected_rooms = Array[int]([-4, 0, 1, 7])
 
 [node name="RoomMinus1" parent="." instance=ExtResource("6_h1bgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.793816, -9.536743e-07, 49.769337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.793816, -9.536743e-07, 49.41933)
 room_id = -1
-room_type = "B"
 connected_dir = Array[String](["south"])
 connected_rooms = Array[int]([2])
 
 [node name="RoomMinus2" parent="." instance=ExtResource("6_h1bgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.598324, -9.536743e-07, 108.51527)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.297573, -9.536743e-07, 108.51527)
 room_id = -2
-room_type = "B"
 connected_dir = Array[String](["west"])
 connected_rooms = Array[int]([4])
 
 [node name="RoomMinus3" parent="." instance=ExtResource("6_h1bgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.86068, -9.536743e-07, 49.769337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.86068, -9.536743e-07, 49.324226)
 room_id = -3
-room_type = "B"
 connected_dir = Array[String](["north"])
 connected_rooms = Array[int]([6])
 
 [node name="RoomMinus4" parent="." instance=ExtResource("6_h1bgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.598324, -9.536743e-07, -10.568903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.989193, -9.536743e-07, -10.568903)
 room_id = -4
-room_type = "B"
 connected_dir = Array[String](["east"])
 connected_rooms = Array[int]([8])
 

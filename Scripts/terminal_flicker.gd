@@ -26,7 +26,7 @@ func flicker(): # Constantly running, simulates a flicker effect for the termina
 
 func turn_off(id): # Turns off the display and sound effects after a dramatic delay
 	if fx_id == id:
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1).timeout
 		visible = false
 		$flickertimer.paused = true
 		$AudioStreamPlayer3D.stream_paused = true
