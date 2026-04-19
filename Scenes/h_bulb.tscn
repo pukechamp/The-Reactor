@@ -42,5 +42,5 @@ wait_time = 0.6
 one_shot = true
 
 [node name="soundtimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 20.0
 one_shot = true

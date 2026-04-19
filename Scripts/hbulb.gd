@@ -23,5 +23,4 @@ func _lightsflicker():
 	fanim2.tween_property($OmniLight3D, "light_energy", .12, .5)
 	if $soundtimer.is_stopped():
 		$soundtimer.start()
-		if ((randi()%2) == 0):
-			$flickersfx.play()
+		$flickersfx.play()
