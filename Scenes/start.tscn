@@ -128,8 +128,8 @@ vertical_alignment = 1
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -4
-position = Vector2(963.5, 537)
-scale = Vector2(3.2183332, 2.7)
+position = Vector2(959.99994, 540.00006)
+scale = Vector2(3.1999998, 2.7000003)
 texture = ExtResource("3_5ogh5")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
