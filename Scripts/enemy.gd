@@ -17,10 +17,6 @@ var room_locs: Array[Vector3] = [
 	Vector3(0.231, 0, 49.758), # Room 6
 	Vector3(0.231, 0, 9.045), # Room 7
 	Vector3(40.598, 0, 9.045), # Room 8
-	Vector3(99.794, 0, 49.769), # Room -1
-	Vector3(40.598, 0, 108.515), # Room -2
-	Vector3(-19.861, 0, 49.769), # Room -3
-	Vector3(40.598, 0, -10.569), # Room -4
 ]
 
 var player_x = 0.231
