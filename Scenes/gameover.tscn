@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjjqmh56j47wq"]
+[gd_scene load_steps=10 format=3 uid="uid://cjjqmh56j47wq"]
 
 [ext_resource type="Script" uid="uid://b6aqcu7wgtf3e" path="res://Scripts/gameover.gd" id="1_qpupn"]
 [ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="2_2oltb"]
 [ext_resource type="Texture2D" uid="uid://cdgwwj01v1l8y" path="res://trenchbroom/textures/gameover.png" id="3_2oltb"]
+[ext_resource type="Texture2D" uid="uid://dyduwpao0t4nv" path="res://Button Icons/TryAgain.png" id="3_26hfm"]
+[ext_resource type="Texture2D" uid="uid://bcun5qopgwqu" path="res://Button Icons/quit.png" id="3_a57xw"]
 [ext_resource type="AudioStream" uid="uid://dfvant63j5hm" path="res://Sfx/submority-morphed-metal-discharged-cinematic-trailer-sound-effects-124763.mp3" id="4_6kwjr"]
+[ext_resource type="Texture2D" uid="uid://cl3lqvtjsfp3y" path="res://Button Icons/quit_hover.png" id="4_qjy16"]
+[ext_resource type="Texture2D" uid="uid://dyr7yonpijhd8" path="res://Button Icons/TryAgain_hover.png" id="4_vskwr"]
 [ext_resource type="AudioStream" uid="uid://dpdmrk8qu7ycf" path="res://Sfx/dragon-studio-creepy-industrial-sounds-ambience-482892.mp3" id="5_bb3cs"]
 
 [node name="Gameover" type="Control"]
@@ -29,7 +33,7 @@ text = "G A M E   O V E R"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Restart" type="Button" parent="."]
+[node name="Restart" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,11 +44,11 @@ offset_right = -686.0
 offset_bottom = -305.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_2oltb")
-theme_override_font_sizes/font_size = 76
-text = "Try again?"
+texture_normal = ExtResource("3_26hfm")
+texture_hover = ExtResource("4_vskwr")
+stretch_mode = 5
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,9 +59,9 @@ offset_right = -686.0
 offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_2oltb")
-theme_override_font_sizes/font_size = 76
-text = "Quit"
+texture_normal = ExtResource("3_a57xw")
+texture_hover = ExtResource("4_qjy16")
+stretch_mode = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1

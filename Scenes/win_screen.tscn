@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://nvcracacqqqh"]
+[gd_scene load_steps=7 format=3 uid="uid://nvcracacqqqh"]
 
 [ext_resource type="Script" uid="uid://ppwqjfo6mhk" path="res://Scripts/win_screen.gd" id="1_a00f1"]
 [ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="1_l5sol"]
 [ext_resource type="AudioStream" uid="uid://d07iqupud46ss" path="res://Sfx/fronbondi_skegs-amb-bleak-but-hopeful-futuristic-ambient-background-track-258932.mp3" id="3_awi1s"]
+[ext_resource type="Texture2D" uid="uid://cbcchr6tn51jc" path="res://Button Icons/BackToMenu.png" id="3_mf36t"]
 [ext_resource type="Texture2D" uid="uid://d0ugbo7ncafco" path="res://trenchbroom/textures/ThankYou.png" id="4_bwc64"]
+[ext_resource type="Texture2D" uid="uid://dur7svcm0u5yo" path="res://Button Icons/BackToMenu_hover.png" id="4_pq638"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -45,7 +47,7 @@ text = "Thanks for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,9 +58,9 @@ offset_right = -703.0
 offset_bottom = -243.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_l5sol")
-theme_override_font_sizes/font_size = 76
-text = "Back to Title Screen"
+texture_normal = ExtResource("3_mf36t")
+texture_hover = ExtResource("4_pq638")
+stretch_mode = 5
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_awi1s")

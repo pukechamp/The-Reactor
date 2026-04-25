@@ -9,6 +9,14 @@ var clickable = true
 func _ready() -> void:
 	$story_text.hide()
 	$BackToMenu.hide()
+	if Input.is_action_pressed("move_forward"):
+		pass
+	if Input.is_action_pressed("scroll_down"):
+		pass
+	if Input.is_action_pressed("interact"):
+		pass
+	if InputEventMouseMotion:
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
