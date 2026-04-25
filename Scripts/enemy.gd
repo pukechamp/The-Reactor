@@ -31,6 +31,10 @@ func _ready() -> void:
 	EventHandler.increase_difficulty.connect(speed_up)
 	$Control.hide()
 	if enemy_type == 0:
+		$Sprite3D/OmniLight3D.hide()
+		$Sprite3D/OmniLight3D2.hide()
+		$Sprite3D/OmniLight3D3.hide()
+		$Sprite3D/OmniLight3D4.hide()
 		$Sprite3D.texture = load("res://trenchbroom/textures/Beekeeper.png")
 		$Sprite3D.position.y = 4.4
 		$Sprite3D.scale = Vector3(2.8, 2.8, 2.8)
