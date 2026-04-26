@@ -83,8 +83,5 @@ position = Vector2(982, 537.5)
 scale = Vector2(3.8828125, 2.1699219)
 texture = ExtResource("4_287tu")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6657505, 10.384047)
-
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="area_entered" from="PlayerDetection" to="." method="_on_player_detection_area_entered"]

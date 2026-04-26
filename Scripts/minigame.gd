@@ -83,5 +83,5 @@ func _on_restart_timer_timeout(): # Restarts the minigame upon a cooldown
 	start()
 
 func add_difficulty(): # Triggered whenever the main has a game-wide diff increase 
-	decrease += 1
+	decrease += .5
 	increase -= 2

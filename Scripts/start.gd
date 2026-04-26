@@ -32,18 +32,20 @@ func _on_quit_pressed() -> void:
 
 func _on_story_pressed() -> void:
 	if clickable == true:
-		$Start.hide()
-		$Story.hide()
-		$Quit.hide()
+		$VBoxContainer.z_index = -3
+		$VBoxContainer/Start.hide()
+		$VBoxContainer/Story.hide()
+		$VBoxContainer/Quit.hide()
 		$story_text.show()
 		$BackToMenu.show()
 		clickable = false
 
 func _on_back_to_menu_pressed() -> void: # Only pressable while on the story screen
 	if clickable == false:
-		$Start.show()
-		$Story.show()
-		$Quit.show()
+		$VBoxContainer.z_index = 0
+		$VBoxContainer/Start.show()
+		$VBoxContainer/Story.show()
+		$VBoxContainer/Quit.show()
 		$story_text.hide()
 		$BackToMenu.hide()
 		clickable = true

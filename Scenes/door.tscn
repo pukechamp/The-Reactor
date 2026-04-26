@@ -48,7 +48,7 @@ omni_attenuation = 3.516
 stream = ExtResource("4_ab4ky")
 
 [node name="ReopenTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 12.0
 one_shot = true
 
 [connection signal="timeout" from="ReopenTimer" to="." method="_on_reopen_timer_timeout"]

@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dahy2lduqiq1"]
+[gd_scene load_steps=14 format=3 uid="uid://dahy2lduqiq1"]
 
 [ext_resource type="Script" uid="uid://47cb17x8kgnp" path="res://Scripts/start.gd" id="1_r48yj"]
 [ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="2_5ogh5"]
-[ext_resource type="Texture2D" uid="uid://pghty5pbikds" path="res://trenchbroom/textures/creative-artwork-decoration-chernobyl-nuclear-600nw-2570607459.png" id="3_5ogh5"]
+[ext_resource type="Texture2D" uid="uid://cnvud6tfcra7h" path="res://Screens/logo.png" id="2_jwunu"]
 [ext_resource type="Texture2D" uid="uid://cljwdx7xdxna0" path="res://Button Icons/Start.png" id="3_o3wvq"]
 [ext_resource type="Texture2D" uid="uid://bni2bie1t8t4g" path="res://Button Icons/Start_hover.png" id="3_rk01k"]
 [ext_resource type="AudioStream" uid="uid://37goob3gvb73" path="res://Sfx/rohhsadotcom-telchado6666-synth-d-major-127bpm-459589.mp3" id="4_lb6bl"]
 [ext_resource type="Texture2D" uid="uid://drcwthovcg7fp" path="res://Button Icons/Story.png" id="5_iceld"]
+[ext_resource type="Texture2D" uid="uid://cuktxjjqjg2o1" path="res://Screens/start_screen.png" id="5_knwj7"]
 [ext_resource type="Texture2D" uid="uid://cxf6pi8w0wr0l" path="res://Button Icons/Story_hover.png" id="6_7pwkw"]
 [ext_resource type="Texture2D" uid="uid://bcun5qopgwqu" path="res://Button Icons/quit.png" id="7_5bn4p"]
 [ext_resource type="Texture2D" uid="uid://cl3lqvtjsfp3y" path="res://Button Icons/quit_hover.png" id="8_qmsyr"]
@@ -22,68 +23,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r48yj")
 
-[node name="Name" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 149.0
-offset_bottom = -701.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_constants/line_spacing = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5ogh5")
-theme_override_font_sizes/font_size = 104
-text = "T H E  R E A C T O R"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Start" type="TextureButton" parent="."]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 680.0
-offset_top = 531.0
-offset_right = -685.0
-offset_bottom = -417.0
-grow_horizontal = 2
-grow_vertical = 2
-action_mode = 0
-texture_normal = ExtResource("3_o3wvq")
-texture_hover = ExtResource("3_rk01k")
-stretch_mode = 5
-
-[node name="Story" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 680.0
-offset_top = 680.0
-offset_right = -685.0
-offset_bottom = -268.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("5_iceld")
-texture_hover = ExtResource("6_7pwkw")
-stretch_mode = 5
-
-[node name="Quit" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 680.0
-offset_top = 832.0
-offset_right = -685.0
-offset_bottom = -116.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("7_5bn4p")
-texture_hover = ExtResource("8_qmsyr")
-stretch_mode = 5
+[node name="Name" type="Sprite2D" parent="."]
+position = Vector2(960, 300)
+texture = ExtResource("2_jwunu")
 
 [node name="Credit" type="Label" parent="."]
 layout_mode = 1
@@ -103,13 +45,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 809.0
-offset_top = 946.0
-offset_right = -815.0
-offset_bottom = -40.164063
+offset_left = 886.0
+offset_top = 950.0
+offset_right = -886.0
+offset_bottom = -97.875
+scale = Vector2(1.8, 1.8)
+pivot_offset = Vector2(74, 0)
 texture_normal = ExtResource("9_jwunu")
 texture_hover = ExtResource("10_1tr1b")
-stretch_mode = 5
+stretch_mode = 3
 
 [node name="story_text" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -139,15 +83,50 @@ vertical_alignment = 1
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -4
 position = Vector2(959.99994, 540.00006)
-scale = Vector2(3.1999998, 2.7000003)
-texture = ExtResource("3_5ogh5")
+texture = ExtResource("5_knwj7")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lb6bl")
 volume_db = -5.0
 autoplay = true
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Story" to="." method="_on_story_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 810.0
+offset_top = 673.0
+offset_right = -960.0
+offset_bottom = -282.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="Start" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("3_o3wvq")
+texture_hover = ExtResource("3_rk01k")
+stretch_mode = 5
+
+[node name="Story" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_iceld")
+texture_hover = ExtResource("6_7pwkw")
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_5bn4p")
+texture_hover = ExtResource("8_qmsyr")
+stretch_mode = 5
+
 [connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

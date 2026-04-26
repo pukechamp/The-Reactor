@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pghty5pbikds"
-path="res://.godot/imported/creative-artwork-decoration-chernobyl-nuclear-600nw-2570607459.png-cdf000a007ccbfc95834761da7f052bf.ctex"
+uid="uid://cuktxjjqjg2o1"
+path="res://.godot/imported/start_screen.png-cb8b19450b8026d93201376306989b75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/creative-artwork-decoration-chernobyl-nuclear-600nw-2570607459.png"
-dest_files=["res://.godot/imported/creative-artwork-decoration-chernobyl-nuclear-600nw-2570607459.png-cdf000a007ccbfc95834761da7f052bf.ctex"]
+source_file="res://Screens/start_screen.png"
+dest_files=["res://.godot/imported/start_screen.png-cb8b19450b8026d93201376306989b75.ctex"]
 
 [params]
 
