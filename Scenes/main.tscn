@@ -2587,7 +2587,8 @@ vertical_alignment = 1
 
 [node name="TickTock" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_hibaj")
-volume_db = 1.0
+volume_db = -7.5
+stream_paused = true
 
 [node name="GameTimer" type="Timer" parent="."]
 wait_time = 300.0

@@ -24,18 +24,17 @@ grow_vertical = 2
 script = ExtResource("1_r48yj")
 
 [node name="Name" type="Sprite2D" parent="."]
-position = Vector2(960, 300)
+position = Vector2(960, 319)
 texture = ExtResource("2_jwunu")
 
 [node name="Credit" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.9990001
-anchor_bottom = 0.99200004
-offset_left = 1596.0
-offset_top = 1025.0
-offset_right = -0.080078125
-offset_bottom = -0.36010742
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1598.0
+offset_top = 1034.0
+theme_override_colors/font_color = Color(0.3872177, 0.054457575, 0, 0.47058824)
 theme_override_fonts/font = ExtResource("2_5ogh5")
 theme_override_font_sizes/font_size = 51
 text = "Game by Angel Zayas"
@@ -67,6 +66,7 @@ offset_bottom = -147.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(561.5, 0)
+theme_override_colors/default_color = Color(0.8392157, 1, 1, 1)
 theme_override_constants/shadow_outline_size = 1
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_5ogh5")
