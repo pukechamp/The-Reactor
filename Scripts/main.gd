@@ -4,6 +4,8 @@ var enemies = preload("res://Scenes/enemy.tscn")
 var minigame_ids = [ -1, -2, -3, -4] # Array of each minigames ID
 var difficulty = 0
 
+# TODO: Rework how the door activations work so they spawn at different times individually of each other and never overlap
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventHandler.game_over.connect(game_over)
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$Label.text = time_to_string()
+	$CenterContainer/Label.text = time_to_string()
 
 func game_over():
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/gameover.tscn")
@@ -79,9 +81,9 @@ func time_to_string() -> String: # Creates a string to display the time left
 
 func set_clock_vis(vis): # Sets visibility of the clock, this is for interaction with the minigames
 	if vis: # Ideally, the clock should disappear if and only if the player is interacting with the terminals
-		$Label.visible = true
+		$CenterContainer/Label.visible = true
 	else:
-		$Label.visible = false
+		$CenterContainer/Label.visible = false
 
 func _on_game_timer_timeout() -> void: # Transitions to victory screen
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/win_screen.tscn") 

@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cxx8gdyl56dnu" path="res://Scenes/TerminalFx.tscn" id="15_jkhe7"]
 [ext_resource type="PackedScene" uid="uid://d1e6lm6tahe2p" path="res://Scenes/door.tscn" id="16_k12tt"]
 [ext_resource type="AudioStream" uid="uid://ddjjyesy1bmi3" path="res://Sfx/freesound_community-tick-tock-104746.mp3" id="20_hibaj"]
-[ext_resource type="FontFile" uid="uid://bdnx47cofmsjo" path="res://Fonts/digital-clock.ttf" id="20_pdsj5"]
+[ext_resource type="FontFile" uid="uid://cne1pgyowpicy" path="res://Fonts/7segments.ttf" id="20_pdsj5"]
 
 [sub_resource type="Environment" id="Environment_pf1pm"]
 background_mode = 1
@@ -2570,14 +2570,17 @@ shape = SubResource("ConvexPolygonShape3D_fc5b6")
 [node name="entity_0_brush_365_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_s2oii")
 
-[node name="Label" type="Label" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 722.0
-offset_top = 17.0
-offset_right = -716.0
-offset_bottom = -880.0
+offset_top = 30.0
+offset_bottom = -916.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_pdsj5")
 theme_override_font_sizes/font_size = 80
@@ -2588,7 +2591,6 @@ vertical_alignment = 1
 [node name="TickTock" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_hibaj")
 volume_db = -7.5
-stream_paused = true
 
 [node name="GameTimer" type="Timer" parent="."]
 wait_time = 300.0

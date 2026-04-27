@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bdnx47cofmsjo"
-path="res://.godot/imported/digital-clock.ttf-21851f204c2875291eae08139621319e.fontdata"
+uid="uid://cne1pgyowpicy"
+path="res://.godot/imported/7segments.ttf-88e681842aee9761cd5645142cdc2b99.fontdata"
 
 [deps]
 
-source_file="res://Fonts/digital-clock.ttf"
-dest_files=["res://.godot/imported/digital-clock.ttf-21851f204c2875291eae08139621319e.fontdata"]
+source_file="res://Fonts/7segments.ttf"
+dest_files=["res://.godot/imported/7segments.ttf-88e681842aee9761cd5645142cdc2b99.fontdata"]
 
 [params]
 

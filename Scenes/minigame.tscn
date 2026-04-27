@@ -34,7 +34,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Bar" type="Sprite2D" parent="."]
-position = Vector2(960, 480)
+position = Vector2(957, 480)
 texture = ExtResource("2_5bepb")
 
 [node name="RestartTimer" type="Timer" parent="."]

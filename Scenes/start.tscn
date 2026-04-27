@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dahy2lduqiq1"]
+[gd_scene load_steps=16 format=3 uid="uid://dahy2lduqiq1"]
 
 [ext_resource type="Script" uid="uid://47cb17x8kgnp" path="res://Scripts/start.gd" id="1_r48yj"]
 [ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="2_5ogh5"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cl3lqvtjsfp3y" path="res://Button Icons/quit_hover.png" id="8_qmsyr"]
 [ext_resource type="Texture2D" uid="uid://7m288tejiywe" path="res://Button Icons/goback.png" id="9_jwunu"]
 [ext_resource type="Texture2D" uid="uid://cwatwp38akf7d" path="res://Button Icons/goback_hover.png" id="10_1tr1b"]
+[ext_resource type="Texture2D" uid="uid://bql6p50o8384u" path="res://Button Icons/credits.png" id="12_ss8vn"]
+[ext_resource type="Texture2D" uid="uid://j3bi31ie8k0c" path="res://Button Icons/credits_hover.png" id="13_w5kog"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -32,13 +34,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1598.0
-offset_top = 1032.0
-offset_bottom = -2.0
+offset_top = 1034.0
+offset_right = -1598.0
 theme_override_colors/font_color = Color(0.3872177, 0.054457575, 0, 0.47058824)
 theme_override_fonts/font = ExtResource("2_5ogh5")
 theme_override_font_sizes/font_size = 51
-text = "Game by Angel Zayas"
+text = " v0.31"
 
 [node name="BackToMenu" type="TextureButton" parent="."]
 layout_mode = 1
@@ -72,6 +73,7 @@ theme_override_constants/shadow_outline_size = 1
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_5ogh5")
 theme_override_font_sizes/normal_font_size = 61
+bbcode_enabled = true
 text = "Kostromvik Union, 198X
 
 After decades, a long abandoned nuclear reactor in a secluded region of the city of Krivichesk has mysteriously shown signs of activity. City records show no entry in or out of the region, or nothing else that would explain it, fueling decades-long whispers of strange happenings in the area. In a matter of three days, activity has grown exponentially and all signs indicate the unmanned reactor is rapidly approaching a meltdown. 
@@ -121,6 +123,12 @@ texture_normal = ExtResource("5_iceld")
 texture_hover = ExtResource("6_7pwkw")
 stretch_mode = 5
 
+[node name="Credits" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_ss8vn")
+texture_hover = ExtResource("13_w5kog")
+stretch_mode = 5
+
 [node name="Quit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("7_5bn4p")
@@ -130,4 +138,5 @@ stretch_mode = 5
 [connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
