@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ppwqjfo6mhk" path="res://Scripts/win_screen.gd" id="1_a00f1"]
 [ext_resource type="FontFile" uid="uid://cwe67381etcad" path="res://Fonts/Asai-Analogue.ttf" id="1_l5sol"]
-[ext_resource type="AudioStream" uid="uid://d07iqupud46ss" path="res://Sfx/fronbondi_skegs-amb-bleak-but-hopeful-futuristic-ambient-background-track-258932.mp3" id="3_awi1s"]
 [ext_resource type="Texture2D" uid="uid://cbcchr6tn51jc" path="res://Button Icons/BackToMenu.png" id="3_mf36t"]
 [ext_resource type="Texture2D" uid="uid://d0ugbo7ncafco" path="res://trenchbroom/textures/ThankYou.png" id="4_bwc64"]
 [ext_resource type="Texture2D" uid="uid://dur7svcm0u5yo" path="res://Button Icons/BackToMenu_hover.png" id="4_pq638"]
+[ext_resource type="AudioStream" uid="uid://ciaaftgfgrqw3" path="res://Sfx/welc0mei0-220626-glitch-dark-industrial-idm-electronica-sf-155641.mp3" id="5_mf36t"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -63,7 +63,8 @@ texture_hover = ExtResource("4_pq638")
 stretch_mode = 5
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_awi1s")
+stream = ExtResource("5_mf36t")
+volume_db = -35.0
 autoplay = true
 parameters/looping = true
 

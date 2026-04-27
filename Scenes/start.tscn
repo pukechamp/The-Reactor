@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cnvud6tfcra7h" path="res://Screens/logo.png" id="2_jwunu"]
 [ext_resource type="Texture2D" uid="uid://cljwdx7xdxna0" path="res://Button Icons/Start.png" id="3_o3wvq"]
 [ext_resource type="Texture2D" uid="uid://bni2bie1t8t4g" path="res://Button Icons/Start_hover.png" id="3_rk01k"]
-[ext_resource type="AudioStream" uid="uid://37goob3gvb73" path="res://Sfx/rohhsadotcom-telchado6666-synth-d-major-127bpm-459589.mp3" id="4_lb6bl"]
 [ext_resource type="Texture2D" uid="uid://drcwthovcg7fp" path="res://Button Icons/Story.png" id="5_iceld"]
 [ext_resource type="Texture2D" uid="uid://cuktxjjqjg2o1" path="res://Screens/start_screen.png" id="5_knwj7"]
 [ext_resource type="Texture2D" uid="uid://cxf6pi8w0wr0l" path="res://Button Icons/Story_hover.png" id="6_7pwkw"]
 [ext_resource type="Texture2D" uid="uid://bcun5qopgwqu" path="res://Button Icons/quit.png" id="7_5bn4p"]
+[ext_resource type="AudioStream" uid="uid://5cw40qwguuml" path="res://Sfx/welc0mei0-190501-dark-industrial-ambient-mechanical-electronica-155502.mp3" id="7_jwunu"]
 [ext_resource type="Texture2D" uid="uid://cl3lqvtjsfp3y" path="res://Button Icons/quit_hover.png" id="8_qmsyr"]
 [ext_resource type="Texture2D" uid="uid://7m288tejiywe" path="res://Button Icons/goback.png" id="9_jwunu"]
 [ext_resource type="Texture2D" uid="uid://cwatwp38akf7d" path="res://Button Icons/goback_hover.png" id="10_1tr1b"]
@@ -33,7 +33,8 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1598.0
-offset_top = 1034.0
+offset_top = 1032.0
+offset_bottom = -2.0
 theme_override_colors/font_color = Color(0.3872177, 0.054457575, 0, 0.47058824)
 theme_override_fonts/font = ExtResource("2_5ogh5")
 theme_override_font_sizes/font_size = 51
@@ -86,8 +87,8 @@ position = Vector2(959.99994, 540.00006)
 texture = ExtResource("5_knwj7")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_lb6bl")
-volume_db = -5.0
+stream = ExtResource("7_jwunu")
+volume_db = -20.0
 autoplay = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

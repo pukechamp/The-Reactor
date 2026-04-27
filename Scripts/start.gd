@@ -7,6 +7,8 @@ var clickable = true
 
 #Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var fade_in = create_tween()
+	fade_in.tween_property($Music, "volume_db", -10, 12).set_trans(Tween.TRANS_LINEAR)
 	$story_text.hide()
 	$BackToMenu.hide()
 	if Input.is_action_pressed("move_forward"):
