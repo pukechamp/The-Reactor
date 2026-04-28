@@ -69,7 +69,7 @@ Thanks to my beautiful girlfiend for helping me playtest this game and pushing m
 
 [left]Contains modified textures from 3djungle.net.
 
-All sound effects and music from pixabay.com
+All music and sound effects from pixabay.com
 
 \"190501 - Dark / Industrial / Ambient / Mechanical / Electronica\" by WELC0MEИ0
 https://pixabay.com/music/electronic-190501-dark-industrial-ambient-mechanical-electronica-155502/
