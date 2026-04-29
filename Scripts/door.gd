@@ -49,11 +49,10 @@ func close_door(id):
 		$AudioStreamPlayer3D.play()
 		var close = create_tween()
 		close.tween_property($door_t, "position:y", 5.4, .75)
-		print("door ", door_id, " is now connected to ", connected_rooms)
 		await close.finished
 		if nav_region.is_baking():
 			await get_tree().create_timer(0.1).timeout
 		nav_region.bake_navigation_mesh()
 
 func _on_reopen_timer_timeout() -> void:
-	open_door(door_id) # Every door automatically reopens after 15 seconds
+	EventHandler.open_door.emit(door_id) # Every door automatically reopens after 12 seconds

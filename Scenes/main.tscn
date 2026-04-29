@@ -2602,8 +2602,16 @@ wait_time = 60.0
 autostart = true
 
 [node name="DoorTimer" type="Timer" parent="."]
-wait_time = 16.0
+wait_time = 15.0
+
+[node name="DoorTimer2" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="DoorTimer3" type="Timer" parent="."]
+wait_time = 15.0
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="DifficultyTimer" to="." method="_on_difficulty_timer_timeout"]
 [connection signal="timeout" from="DoorTimer" to="." method="_on_door_timer_timeout"]
+[connection signal="timeout" from="DoorTimer2" to="." method="_on_door_timer_2_timeout"]
+[connection signal="timeout" from="DoorTimer3" to="." method="_on_door_timer_3_timeout"]

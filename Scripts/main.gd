@@ -2,17 +2,20 @@ extends Node3D
 
 var enemies = preload("res://Scenes/enemy.tscn")
 var minigame_ids = [ -1, -2, -3, -4] # Array of each minigames ID
+var open_doors = [0, 1, 2, 3, 4 , 5, 6, 7, 8, 9, 10, 11]
 var difficulty = 0
 
 # TODO: Rework how the door activations work so they spawn at different times individually of each other and never overlap
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	EventHandler.open_door.connect(update_open_doors)
 	EventHandler.game_over.connect(game_over)
 	EventHandler.hide_or_show_clock.connect(set_clock_vis)
 	minigame_ids.shuffle() # Shuffled in order to randomize the order in which they boot
-	await get_tree().create_timer(5).timeout
 	$DoorTimer.start()
+	
+	await get_tree().create_timer(5).timeout
 	for i in range(4):
 		EventHandler.boot_minigame.emit(minigame_ids[i])
 		await get_tree().create_timer(15).timeout
@@ -102,9 +105,29 @@ func _on_difficulty_timer_timeout() -> void:
 		4:
 			$TickTock.play()
 
+func update_open_doors(id):
+	open_doors.append(id)
+
+func door_close_logic():
+	var temp = open_doors.pick_random()
+	open_doors.erase(temp)
+	EventHandler.close_door.emit(temp)
+	
 func _on_door_timer_timeout() -> void: # Updates amount of doors that can be closed at once as difficulty increases
-	EventHandler.close_door.emit(randi_range(0, 11)) # TODO: Upgrate to something more sophisticated if there's time
+	door_close_logic()                 # TODO: Upgrate to something more sophisticated if there's time
 	if difficulty > 1:
-		EventHandler.close_door.emit(randi_range(0, 11))
+		if $DoorTimer2.is_stopped():
+			await get_tree().create_timer(5).timeout
+			print("door 2")
+			$DoorTimer2.start()
+
+func _on_door_timer_2_timeout() -> void:
+	door_close_logic()
 	if difficulty > 3:
-		EventHandler.close_door.emit(randi_range(0, 11))
+		if $DoorTimer3.is_stopped():
+			await get_tree().create_timer(5).timeout
+			print("door 3")
+			$DoorTimer3.start()
+
+func _on_door_timer_3_timeout() -> void:
+	door_close_logic()
