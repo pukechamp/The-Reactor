@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	$ProgressBar.value = bar_current
 	
 	if bar_current <= 0:
-		EventHandler.game_over.emit()
+		EventHandler.game_over.emit(2)
 	if $RestartTimer.is_stopped() && m_running:
 		bar_current -= delta * decrease
 		if (bar_current > 60):

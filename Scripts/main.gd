@@ -24,7 +24,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$CenterContainer/Label.text = time_to_string()
 
-func game_over():
+func game_over(_cod):
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/gameover.tscn")
 
 func enemy_spawn(id):

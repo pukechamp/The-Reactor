@@ -106,7 +106,7 @@ func _on_player_detection_area_entered(area: Area3D) -> void:
 		$DeathSound.play()
 		$Control.show()
 		await get_tree().create_timer(.4).timeout
-		EventHandler.game_over.emit()
+		EventHandler.game_over.emit(enemy_type)
 
 func speed_up():
 	extra_speed += 1
